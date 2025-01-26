@@ -49,13 +49,12 @@ async def set_weight(message: Message, state: FSMContext):
         )
         last_bot_message_id = bot_message.message_id
     else:
-        bot_message = await utils.not_valid_data(
+        last_bot_message_id = await utils.not_valid_data(
             message=message,
             last_bot_message_id=last_bot_message_id,
             new_text="Please enter a valid age",
             user_id=user_id,
             info="age")
-        last_bot_message_id = bot_message.message_id
 
 @router.message(Survey.weight)
 async def set_height(message: Message, state: FSMContext):
@@ -77,13 +76,12 @@ async def set_height(message: Message, state: FSMContext):
         )
         last_bot_message_id = bot_message.message_id
     else:
-        bot_message = await utils.not_valid_data(
+        last_bot_message_id = await utils.not_valid_data(
             message=message,
             last_bot_message_id=last_bot_message_id,
             new_text="Please enter a valid weight in kilograms",
             user_id=user_id,
             info="weight in kilograms")
-        last_bot_message_id = bot_message.message_id
 
 @router.message(Survey.height)
 async def set_feet(message: Message, state: FSMContext):
@@ -105,14 +103,13 @@ async def set_feet(message: Message, state: FSMContext):
         )
         last_bot_message_id = bot_message.message_id
     else:
-        bot_message = await utils.not_valid_data(
+        last_bot_message_id = await utils.not_valid_data(
             message=message,
             last_bot_message_id=last_bot_message_id,
             new_text="Please enter a valid height in centimeters",
             user_id=user_id,
             info="height in centimeters"
         )
-        last_bot_message_id = bot_message.message_id
 
 @router.message(Survey.feet)
 async def set_gender(message: Message, state: FSMContext):
@@ -133,14 +130,13 @@ async def set_gender(message: Message, state: FSMContext):
             new_text="What's your gender?"
         )
     else:
-        bot_message = await utils.not_valid_data(
+        last_bot_message_id = await utils.not_valid_data(
             message=message,
             last_bot_message_id=last_bot_message_id,
             new_text="Please enter a valid feet size",
             user_id=user_id,
             info="feet size"
         )
-        last_bot_message_id = bot_message.message_id
 
 @router.callback_query(Survey.gender)
 async def set_gender(query: CallbackQuery, state: FSMContext):

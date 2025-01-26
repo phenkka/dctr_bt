@@ -25,4 +25,5 @@ async def not_valid_data(message: Message, last_bot_message_id: int, new_text: s
         last_bot_message_id=last_bot_message_id,
         new_text=new_text
     )
-    return bot_message
+    last_bot_message_id = bot_message.message_id
+    return last_bot_message_id
