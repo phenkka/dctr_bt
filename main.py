@@ -11,7 +11,7 @@ bot = Bot(token=cfg.BOT_API)
 dp = Dispatcher()
 
 async def main():
-    logger.info("Bot is started. Polling begins")
+    logger.info("Bot is started. Polling begins.")
     dp.include_router(router)
     await dp.start_polling(bot)
 
@@ -20,5 +20,5 @@ if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        logger.warning("Bot is stopped manually")
+        logger.warning("Bot is stopped manually.")
         print("Exit")
