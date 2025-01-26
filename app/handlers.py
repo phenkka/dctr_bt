@@ -6,8 +6,11 @@ from aiogram.types import Message, CallbackQuery
 from logs.logging_config import logger
 from app.states import Survey
 import app.keyboards as kb
+import app.utils as utils
 
 router = Router()
+
+last_bot_message_id = None
 
 @router.message(Command("start"))
 async def cmd_start(message: Message):
@@ -16,40 +19,76 @@ async def cmd_start(message: Message):
 
 @router.callback_query(F.data == "survey")
 async def set_age(query: CallbackQuery, state: FSMContext):
+    global last_bot_message_id
+
     await state.set_state(Survey.age)
     logger.info(f"The user {query.from_user.id}'s state has been set to Survey.age.")
-    await query.message.edit_text("Let's start. At the beginning, enter your age.")
+
+    bot_message = await query.message.edit_text("Let's start. At the beginning, enter your age.")
+    last_bot_message_id = bot_message.message_id
 
 @router.message(Survey.age)
 async def set_weight(message: Message, state: FSMContext):
+    global last_bot_message_id
+
     await state.update_data(age=message.text)
     await state.set_state(Survey.weight)
     logger.info(f"The user {message.from_user.id}'s state has been set to Survey.weight.")
-    await message.answer("Enter your weight\n"
-                            "<i>(in kilograms)</i>", parse_mode='HTML')
+
+    await message.delete()
+    bot_message = await utils.delete_prev_and_send_new(
+        message=message,
+        last_bot_message_id=last_bot_message_id,
+        new_text="Enter your weight\n<i>(in kilograms)</i>"
+    )
+    last_bot_message_id = bot_message.message_id
 
 @router.message(Survey.weight)
 async def set_height(message: Message, state: FSMContext):
+    global last_bot_message_id
+
     await state.update_data(weight=message.text)
     await state.set_state(Survey.height)
     logger.info(f"The user {message.from_user.id}'s state has been set to Survey.height.")
-    await message.answer("Enter your height\n"
-                            "<i>(in centimeters)</i>", parse_mode='HTML')
+
+    await message.delete()
+    bot_message = await utils.delete_prev_and_send_new(
+        message=message,
+        last_bot_message_id=last_bot_message_id,
+        new_text="Enter your height\n<i>(in centimeters)</i>"
+    )
+    last_bot_message_id = bot_message.message_id
 
 @router.message(Survey.height)
 async def set_feet(message: Message, state: FSMContext):
+    global last_bot_message_id
+
     await state.update_data(height=message.text)
     await state.set_state(Survey.feet)
     logger.info(f"The user {message.from_user.id}'s state has been set to Survey.feet.")
-    await message.answer("Enter your feet\n"
-                            "<i>(EU size)</i>", parse_mode='HTML')
+
+    await message.delete()
+    bot_message = await utils.delete_prev_and_send_new(
+        message=message,
+        last_bot_message_id=last_bot_message_id,
+        new_text="Enter your feet\n<i>(EU size)</i>"
+    )
+    last_bot_message_id = bot_message.message_id
 
 @router.message(Survey.feet)
 async def set_gender(message: Message, state: FSMContext):
+    global last_bot_message_id
+
     await state.update_data(feet=message.text)
     await state.set_state(Survey.gender)
     logger.info(f"The user {message.from_user.id}'s state has been set to Survey.gender.")
-    await message.answer("What's your gender?\n", reply_markup=kb.gender, parse_mode='HTML')
+
+    await message.delete()
+    await utils.delete_prev_and_send_new(
+        message=message,
+        last_bot_message_id=last_bot_message_id,
+        new_text="What's your gender?"
+    )
 
 @router.callback_query(Survey.gender)
 async def set_gender(query: CallbackQuery, state: FSMContext):
