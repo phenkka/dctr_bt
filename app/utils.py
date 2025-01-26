@@ -15,3 +15,14 @@ async def delete_prev_and_send_new(message: Message, last_bot_message_id: int, n
     else:
         bot_message = await message.answer(new_text, parse_mode='HTML')
     return bot_message
+
+async def not_valid_data(message: Message, last_bot_message_id: int, new_text: str, user_id: int, info: str):
+    logger.warning(f"The user {user_id} is trying enter not valid {info}.")
+
+    await message.delete()
+    bot_message = await delete_prev_and_send_new(
+        message=message,
+        last_bot_message_id=last_bot_message_id,
+        new_text=new_text
+    )
+    return bot_message
