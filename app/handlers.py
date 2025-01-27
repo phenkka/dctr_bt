@@ -2,15 +2,26 @@ from aiogram import Router, F
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, CallbackQuery
+from aiogram.exceptions import TelegramBadRequest
 
-from logs.logging_config import logger
+from contextlib import suppress
+
+from app.logs.logging_config import logger
 from app.states import Survey
 import app.keyboards as kb
 import app.utils as utils
+import app.pagination as pg
 
 router = Router()
 
 last_bot_message_id = None
+
+fake_data = [
+    ["Привет", "Я тут"],
+    ["Я здесь", "Я тут"],
+    ["Возраст", "Я тут"],
+    ["Тут", "Я тут"]
+]
 
 @router.message(Command("start"))
 async def cmd_start(message: Message):
@@ -63,7 +74,7 @@ async def set_height(message: Message, state: FSMContext):
     user_message = message.text
     user_id = message.from_user.id
 
-    if 0 < int(user_message) < 700:
+    if 1 < int(user_message) < 700:
         await state.update_data(weight=user_message)
         await state.set_state(Survey.height)
         logger.info(f"The user {user_id}'s state has been set to Survey.height.")
@@ -90,7 +101,7 @@ async def set_feet(message: Message, state: FSMContext):
     user_message = message.text
     user_id = message.from_user.id
 
-    if 0 < int(user_message) < 300:
+    if 25 < int(user_message) < 300:
         await state.update_data(height=message.text)
         await state.set_state(Survey.feet)
         logger.info(f"The user {message.from_user.id}'s state has been set to Survey.feet.")
@@ -118,7 +129,7 @@ async def set_gender(message: Message, state: FSMContext):
     user_message = message.text
     user_id = message.from_user.id
 
-    if 0 < int(user_message) < 80:
+    if 15 < int(user_message) < 80:
         await state.update_data(feet=user_message)
         await state.set_state(Survey.gender)
         logger.info(f"The user {user_id}'s state has been set to Survey.gender.")
@@ -174,6 +185,23 @@ async def set_smoking(query: CallbackQuery, state: FSMContext):
 
     await query.message.edit_text("Are you sexually active?", reply_markup=kb.yon)
 
+
+@router.callback_query(pg.Pagination.filter(F.action.in_(["prev", "next"])))
+async def pagination_query(query: CallbackQuery, callback_data: pg.Pagination):
+    page_num = int(callback_data.page)
+    page = page_num - 1 if page_num > 0 else 0
+
+    if callback_data.action == "next":
+        page = page_num + 1 if page_num < (len(fake_data) - 1) else page_num
+
+    with suppress(TelegramBadRequest):
+        await query.message.edit_text(f"{fake_data[page][0]}\n<b>{fake_data[page][1]}</b>",
+                                   reply_markup=pg.paginator(page),
+                                   parse_mode='HTML'
+        )
+    await query.answer()
+
+
 @router.callback_query(Survey.sex)
 async def set_sex(query: CallbackQuery, state: FSMContext):
     """The survey result"""
@@ -182,12 +210,5 @@ async def set_sex(query: CallbackQuery, state: FSMContext):
     await state.clear()
     logger.info(f"The user {query.from_user.id}'s state has been clean.")
 
-    await query.message.edit_text("Thank you for completing the survey! Your answers:"
-                                  f"\n\nAge: {data['age']}"
-                                  f"\nWeight: {data['weight']}"
-                                  f"\nHeight: {data['height']}"
-                                  f"\nFeet: {data['feet']}"
-                                  f"\nGender: {data['gender']}"
-                                  f"\nPregnant: {data['pregnant']}"
-                                  f"\nSmoking: {data['smoking']}"
-                                  f"\nSex activity: {data['sex']}")
+    await query.message.edit_text("Thank you for completing the survey! Your answers:")
+    await query.message.answer(f"{fake_data[0][0]}\n<b>{fake_data[0][1]}</b>", reply_markup=pg.paginator(), parse_mode='HTML')
