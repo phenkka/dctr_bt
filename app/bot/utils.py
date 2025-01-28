@@ -1,7 +1,7 @@
 from aiogram.types import Message
 
-from logs.logging_config import logger
-import app.keyboards as kb
+from app.logs.logging_config import logger
+import app.bot.keyboards as kb
 
 async def delete_prev_and_send_new(message: Message, last_bot_message_id: int, new_text: str):
     try:

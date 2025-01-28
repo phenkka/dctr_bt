@@ -3,8 +3,8 @@ import logging
 
 from aiogram import Bot, Dispatcher
 
-import app.config as cfg
-from app.handlers import router
+import config as cfg
+from bot.handlers import router
 from app.logs.logging_config import logger
 
 bot = Bot(token=cfg.BOT_API)
