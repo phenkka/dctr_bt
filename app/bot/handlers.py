@@ -23,6 +23,8 @@ fake_data = [
     ["Тут", "Я тут"]
 ]
 
+data = []
+
 @router.message(Command("start"))
 async def cmd_start(message: Message):
     """The command /start"""
@@ -205,6 +207,8 @@ async def pagination_query(query: CallbackQuery, callback_data: pg.Pagination):
 @router.callback_query(Survey.sex)
 async def set_sex(query: CallbackQuery, state: FSMContext):
     """The survey result"""
+    global data
+
     await state.update_data(sex=query.data)
     data = await state.get_data()
     await state.clear()

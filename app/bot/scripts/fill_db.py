@@ -75,6 +75,7 @@ def insert_data():
         else:
             risk_text = recommendation.get('riskText', '')
             servFreq = recommendation.get('servFreq', '')
+            text = recommendation.get('text', '').replace('The USPSTF', 'The DoctorAI', 1) #ЕСЛИ ЧТО, ТО ДОКТОРОАИ ПОМЕНЯТЬ
 
             cursor.execute('''
                 INSERT INTO specific_recommendations (id, title, grade, gender, text, age_from, age_to, servFreq, riskName, riskText)
@@ -84,7 +85,7 @@ def insert_data():
                 recommendation['title'],
                 recommendation['grade'],
                 recommendation['gender'],
-                recommendation['text'],
+                text,
                 recommendation['ageRange'][0],  
                 recommendation['ageRange'][1],  
                 servFreq,
