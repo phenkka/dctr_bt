@@ -1,0 +1,123 @@
+2025-01-28 16:44:27 [INFO] Bot is started. Polling begins.
+2025-01-28 16:44:27 [INFO] Start polling
+2025-01-28 16:44:27 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 16:44:32 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 16:44:32 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 16:44:34 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 16:44:34 [INFO] The user 5407850682 called the command /start.
+2025-01-28 16:44:34 [INFO] Update id=273477825 is handled. Duration 250 ms by bot id=8108339380
+2025-01-28 16:44:38 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 16:44:38 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 16:44:39 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 16:44:39 [INFO] Update id=273477828 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 16:44:43 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 16:44:43 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 16:44:49 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 16:44:49 [WARNING] Sleep for 1.199153 seconds and try again... (tryings = 1, bot id = 8108339380)
+2025-01-28 16:44:55 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 16:44:55 [WARNING] Sleep for 1.530685 seconds and try again... (tryings = 2, bot id = 8108339380)
+2025-01-28 16:44:57 [INFO] Connection established (tryings = 3, bot id = 8108339380)
+2025-01-28 16:44:57 [INFO] Update id=273477830 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 16:45:01 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 16:45:01 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 16:45:03 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 16:45:03 [INFO] Update id=273477832 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 16:45:03 [INFO] Update id=273477833 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 16:45:07 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 16:45:07 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 16:45:08 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 16:45:08 [INFO] Update id=273477834 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 16:45:08 [INFO] Update id=273477835 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 16:45:15 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 16:45:15 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 16:45:20 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 16:45:20 [WARNING] Sleep for 1.395725 seconds and try again... (tryings = 1, bot id = 8108339380)
+2025-01-28 16:45:26 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 16:45:26 [WARNING] Sleep for 1.644542 seconds and try again... (tryings = 2, bot id = 8108339380)
+2025-01-28 16:45:31 [INFO] Polling stopped
+2025-01-28 16:45:31 [INFO] Polling stopped for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 16:45:31 [WARNING] Bot is stopped manually.
+2025-01-28 16:45:49 [INFO] Bot is started. Polling begins.
+2025-01-28 16:45:49 [INFO] Start polling
+2025-01-28 16:45:50 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 16:45:53 [INFO] The user 5407850682 called the command /start.
+2025-01-28 16:45:53 [INFO] Update id=273477836 is handled. Duration 329 ms by bot id=8108339380
+2025-01-28 16:45:54 [INFO] The user 5407850682's state has been set to Survey.age.
+2025-01-28 16:45:54 [INFO] Update id=273477837 is handled. Duration 219 ms by bot id=8108339380
+2025-01-28 16:45:56 [INFO] The user 5407850682's state has been set to Survey.weight.
+2025-01-28 16:45:56 [INFO] Update id=273477838 is handled. Duration 109 ms by bot id=8108339380
+2025-01-28 16:45:56 [INFO] The user 5407850682's state has been set to Survey.height.
+2025-01-28 16:45:56 [INFO] Update id=273477839 is handled. Duration 125 ms by bot id=8108339380
+2025-01-28 16:45:57 [INFO] The user 5407850682's state has been set to Survey.feet.
+2025-01-28 16:45:57 [INFO] Update id=273477840 is handled. Duration 140 ms by bot id=8108339380
+2025-01-28 16:45:58 [INFO] The user 5407850682's state has been set to Survey.gender.
+2025-01-28 16:45:58 [INFO] Update id=273477841 is handled. Duration 94 ms by bot id=8108339380
+2025-01-28 16:46:00 [INFO] The user 5407850682's state has been set to Survey.smoking.
+2025-01-28 16:46:00 [INFO] Update id=273477842 is handled. Duration 78 ms by bot id=8108339380
+2025-01-28 16:46:01 [INFO] The user 5407850682's state has been set to Survey.sex.
+2025-01-28 16:46:01 [INFO] Update id=273477843 is handled. Duration 125 ms by bot id=8108339380
+2025-01-28 16:46:01 [INFO] The user 5407850682's state has been clean.
+2025-01-28 16:46:01 [INFO] Update id=273477844 is handled. Duration 250 ms by bot id=8108339380
+2025-01-28 16:46:04 [INFO] Update id=273477845 is handled. Duration 328 ms by bot id=8108339380
+2025-01-28 16:46:05 [INFO] Update id=273477846 is handled. Duration 171 ms by bot id=8108339380
+2025-01-28 16:46:07 [INFO] Update id=273477847 is handled. Duration 202 ms by bot id=8108339380
+2025-01-28 16:46:08 [INFO] Update id=273477848 is handled. Duration 203 ms by bot id=8108339380
+2025-01-28 16:46:09 [INFO] Update id=273477849 is handled. Duration 344 ms by bot id=8108339380
+2025-01-28 16:46:10 [INFO] Update id=273477850 is handled. Duration 375 ms by bot id=8108339380
+2025-01-28 16:46:14 [INFO] Update id=273477851 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 16:49:29 [INFO] Polling stopped
+2025-01-28 16:49:29 [INFO] Polling stopped for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 16:49:29 [WARNING] Bot is stopped manually.
+2025-01-28 16:49:34 [INFO] Bot is started. Polling begins.
+2025-01-28 16:49:34 [INFO] Start polling
+2025-01-28 16:49:34 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 16:49:35 [INFO] The user 5407850682 called the command /start.
+2025-01-28 16:49:35 [INFO] Update id=273477852 is handled. Duration 265 ms by bot id=8108339380
+2025-01-28 16:49:37 [INFO] The user 5407850682's state has been set to Survey.age.
+2025-01-28 16:49:37 [INFO] Update id=273477853 is handled. Duration 155 ms by bot id=8108339380
+2025-01-28 16:49:39 [INFO] The user 5407850682's state has been set to Survey.weight.
+2025-01-28 16:49:39 [INFO] Update id=273477854 is handled. Duration 187 ms by bot id=8108339380
+2025-01-28 16:49:39 [INFO] The user 5407850682's state has been set to Survey.height.
+2025-01-28 16:49:39 [INFO] Update id=273477855 is handled. Duration 109 ms by bot id=8108339380
+2025-01-28 16:49:40 [INFO] The user 5407850682's state has been set to Survey.feet.
+2025-01-28 16:49:40 [INFO] Update id=273477856 is handled. Duration 125 ms by bot id=8108339380
+2025-01-28 16:49:41 [INFO] The user 5407850682's state has been set to Survey.gender.
+2025-01-28 16:49:41 [INFO] Update id=273477857 is handled. Duration 203 ms by bot id=8108339380
+2025-01-28 16:49:43 [INFO] The user 5407850682's state has been set to Survey.smoking.
+2025-01-28 16:49:43 [INFO] Update id=273477858 is handled. Duration 186 ms by bot id=8108339380
+2025-01-28 16:49:44 [INFO] The user 5407850682's state has been set to Survey.sex.
+2025-01-28 16:49:44 [INFO] Update id=273477859 is handled. Duration 109 ms by bot id=8108339380
+2025-01-28 16:49:44 [INFO] The user 5407850682's state has been clean.
+2025-01-28 16:49:44 [INFO] Update id=273477860 is handled. Duration 94 ms by bot id=8108339380
+2025-01-28 16:49:50 [INFO] Polling stopped
+2025-01-28 16:49:51 [INFO] Polling stopped for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 16:49:51 [WARNING] Bot is stopped manually.
+2025-01-28 16:50:04 [INFO] Bot is started. Polling begins.
+2025-01-28 16:50:04 [INFO] Start polling
+2025-01-28 16:50:04 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 16:50:05 [INFO] The user 5407850682 called the command /start.
+2025-01-28 16:50:06 [INFO] Update id=273477861 is handled. Duration 265 ms by bot id=8108339380
+2025-01-28 16:50:07 [INFO] The user 5407850682's state has been set to Survey.age.
+2025-01-28 16:50:07 [INFO] Update id=273477862 is handled. Duration 140 ms by bot id=8108339380
+2025-01-28 16:50:08 [INFO] The user 5407850682's state has been set to Survey.weight.
+2025-01-28 16:50:08 [INFO] Update id=273477863 is handled. Duration 140 ms by bot id=8108339380
+2025-01-28 16:50:09 [INFO] The user 5407850682's state has been set to Survey.height.
+2025-01-28 16:50:09 [INFO] Update id=273477864 is handled. Duration 140 ms by bot id=8108339380
+2025-01-28 16:50:09 [INFO] The user 5407850682's state has been set to Survey.feet.
+2025-01-28 16:50:09 [INFO] Update id=273477865 is handled. Duration 110 ms by bot id=8108339380
+2025-01-28 16:50:10 [INFO] The user 5407850682's state has been set to Survey.gender.
+2025-01-28 16:50:10 [INFO] Update id=273477866 is handled. Duration 94 ms by bot id=8108339380
+2025-01-28 16:50:12 [INFO] The user 5407850682's state has been set to Survey.smoking.
+2025-01-28 16:50:13 [INFO] Update id=273477867 is handled. Duration 155 ms by bot id=8108339380
+2025-01-28 16:50:13 [INFO] The user 5407850682's state has been set to Survey.sex.
+2025-01-28 16:50:13 [INFO] Update id=273477868 is handled. Duration 94 ms by bot id=8108339380
+2025-01-28 16:50:14 [INFO] The user 5407850682's state has been clean.
+2025-01-28 16:50:14 [INFO] Update id=273477869 is handled. Duration 234 ms by bot id=8108339380
+2025-01-28 16:50:15 [INFO] Update id=273477870 is handled. Duration 219 ms by bot id=8108339380
+2025-01-28 16:50:16 [INFO] Update id=273477871 is handled. Duration 219 ms by bot id=8108339380
+2025-01-28 16:50:19 [INFO] Update id=273477872 is handled. Duration 235 ms by bot id=8108339380
+2025-01-28 16:50:20 [INFO] Update id=273477873 is handled. Duration 172 ms by bot id=8108339380
+2025-01-28 16:50:20 [INFO] Update id=273477874 is handled. Duration 235 ms by bot id=8108339380
+2025-01-28 16:50:21 [INFO] Update id=273477875 is handled. Duration 344 ms by bot id=8108339380
+2025-01-28 16:50:25 [INFO] Update id=273477876 is handled. Duration 171 ms by bot id=8108339380
+2025-01-28 16:50:28 [INFO] Update id=273477877 is handled. Duration 234 ms by bot id=8108339380

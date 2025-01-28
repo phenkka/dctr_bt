@@ -9,3 +9,4 @@ class Survey(StatesGroup):
     pregnant = State()
     smoking = State()
     sex = State()
+    recommendations = State()
