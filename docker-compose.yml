@@ -34,7 +34,7 @@ services:
     image: dpage/pgadmin4
     container_name: pgadmin
     env_file:
-      - .env
+      - /app/.env
     ports:
       - 8001:80
     depends_on:
