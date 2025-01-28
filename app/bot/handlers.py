@@ -6,8 +6,8 @@ from aiogram.exceptions import TelegramBadRequest
 
 from contextlib import suppress
 
-from app.logs.logging_config import logger
-from app.bot.states import Survey
+from logs.logging_config import logger
+from bot.states import Survey
 import app.bot.keyboards as kb
 import app.bot.utils as utils
 import app.bot.pagination as pg

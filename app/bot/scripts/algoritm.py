@@ -53,17 +53,15 @@ class Database:
             query += " AND (gender = %s OR gender = 'men and women')"
             params.append(data['gender'])
 
-        if 'smoking' in data:
-            query += " AND (riskName = 'Tobacco user')"
-            params.append(data['smoking'])
+        if data["smoking"] == "yes":
+            query += " OR (riskName = 'Tobacco user')"
 
-        if 'pregnant' in data:
-            query += " AND (pregnant = 'Pregnant')"
-            params.append(data['pregnant'])
+        if data["pregnant"] == "yes":
+            query += " OR (riskName = 'Pregnant')"
 
-        if 'sex' in data:
-            query += " AND (sex = '')"
-            params.append(data['sex'])
+        if data["sex"] == "yes":
+            query += " OR (riskName = 'Sexually Active')"
+
 
         results = self.execute_read_many_query(query, params)
 

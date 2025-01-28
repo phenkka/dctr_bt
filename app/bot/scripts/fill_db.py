@@ -30,7 +30,8 @@ def create_tables():
             age_to INTEGER,
             servFreq TEXT,
             riskName TEXT,
-            riskText TEXT
+            riskText TEXT,
+            bmi TEXT,
         )
     ''')
 
@@ -73,16 +74,18 @@ def insert_data():
         if existing:
             print(f"Recommendation with id {recommendation['id']} already exists, skipping...")
         else:
+            title = recommendation.get('title', '').split('--')[0]
             risk_text = recommendation.get('riskText', '')
             servFreq = recommendation.get('servFreq', '')
             text = recommendation.get('text', '').replace('The USPSTF', 'The DoctorAI', 1) #ЕСЛИ ЧТО, ТО ДОКТОРОАИ ПОМЕНЯТЬ
+            bmi = recommendation.get('bmi', '')
 
             cursor.execute('''
-                INSERT INTO specific_recommendations (id, title, grade, gender, text, age_from, age_to, servFreq, riskName, riskText)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                INSERT INTO specific_recommendations (id, title, grade, gender, text, age_from, age_to, servFreq, riskName, riskText, bmi)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             ''', (
                 recommendation['id'],
-                recommendation['title'],
+                title,
                 recommendation['grade'],
                 recommendation['gender'],
                 text,
@@ -90,7 +93,8 @@ def insert_data():
                 recommendation['ageRange'][1],  
                 servFreq,
                 recommendation['riskName'],
-                risk_text  
+                risk_text,
+                bmi
             ))
 
 
