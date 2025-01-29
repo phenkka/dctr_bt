@@ -37,8 +37,6 @@ async def insert_data():
 
             # Вставка рекомендаций
             for recommendation in specific_recommendations:
-                if recommendation.get('grade', '') == "I":
-                    continue
 
                 existing = await conn.fetchval(
                     'SELECT id FROM specific_recommendations WHERE id = $1',
@@ -76,7 +74,7 @@ async def insert_data():
             for tool_id, tool in tools.items():
                 existing = await conn.fetchval(
                     'SELECT tool_id FROM tools WHERE tool_id = $1',
-                    tool_id
+                    int(tool_id)
                 )
                 if existing:
                     print(f"Tool with id {tool_id} already exists, skipping...")
@@ -96,20 +94,22 @@ async def insert_data():
             # Вставка связей между рекомендациями и инструментами
             for recommendation in specific_recommendations:
                 for tool_id in recommendation.get('tool', []):
-                    existing = await conn.fetchval('''
-                        SELECT 1 FROM specific_recommendations_tools
-                        WHERE specific_recommendation_id = $1 AND tool_id = $2
-                    ''', recommendation['id'], tool_id)
+                    try:
+                        existing = await conn.fetchval('''
+                            SELECT 1 FROM specific_recommendations_tools
+                            WHERE specific_recommendation_id = $1 AND tool_id = $2
+                        ''', recommendation['id'], int(tool_id))
 
-                    if existing:
-                        print(f"Link between recommendation {recommendation['id']} and tool {tool_id} already exists, skipping...")
-                    else:
-                        await conn.execute('''
-                            INSERT INTO specific_recommendations_tools (specific_recommendation_id, tool_id)
-                            VALUES ($1, $2)
-                        ''', recommendation['id'], tool_id)
-                        print(f"Inserted link between recommendation {recommendation['id']} and tool {tool_id}")
-
+                        if existing:
+                            print(f"Link between recommendation {recommendation['id']} and tool {tool_id} already exists, skipping...")
+                        else:
+                            await conn.execute('''
+                                INSERT INTO specific_recommendations_tools (specific_recommendation_id, tool_id)
+                                VALUES ($1, $2)
+                            ''', recommendation['id'], int(tool_id))
+                            print(f"Inserted link between recommendation {recommendation['id']} and tool {tool_id}")
+                    except:
+                        continue
     await pool.close()  # Закрываем пул подключений
 
 

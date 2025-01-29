@@ -1,12 +1,13 @@
 from aiogram import types
-from aiogram.middleware.base import BaseMiddleware
+from aiogram.dispatcher.middlewares.base import BaseMiddleware
 
 class DatabaseMiddleware(BaseMiddleware):
-    """Middleware для передачи соединения с базой данных в хендлеры"""
-
     def __init__(self, pool):
+        super().__init__()
         self.pool = pool
 
-    async def on_process_message(self, message: types.Message, data: dict):
-        """Передаем пул в обработчики"""
-        data['db_pool'] = self.pool
+    async def __call__(self, handler, event: types.Update, data: dict):
+        # Передаем подключение к БД в данные хендлера
+        data["db"] = self.pool
+        return await handler(event, data)
+

@@ -383,3 +383,86 @@ TypeError: AbstractConnectionPool._putconn() missing 1 required positional argum
 2025-01-28 13:26:27 [INFO] Bot is started. Polling begins.
 2025-01-28 13:26:27 [INFO] Start polling
 2025-01-28 13:26:29 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-29 20:15:30 [INFO] 🚀 Бот запускается...
+2025-01-29 20:15:31 [INFO] ✅ Пул подключений к БД создан.
+2025-01-29 20:15:31 [INFO] ✅ Таблицы в базе данных успешно созданы.
+2025-01-29 20:16:15 [INFO] 🚀 Бот запускается...
+2025-01-29 20:16:15 [INFO] ✅ Пул подключений к БД создан.
+2025-01-29 20:16:15 [INFO] ✅ Таблицы в базе данных успешно созданы.
+2025-01-29 20:16:15 [INFO] Start polling
+2025-01-29 20:16:17 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-29 20:31:45 [INFO] The user 711983855 called the command /start.
+2025-01-29 20:31:46 [INFO] Update id=273477919 is handled. Duration 1386 ms by bot id=8108339380
+2025-01-29 20:31:47 [INFO] The user 711983855's state has been set to Survey.age.
+2025-01-29 20:31:47 [INFO] Update id=273477920 is handled. Duration 429 ms by bot id=8108339380
+2025-01-29 20:31:52 [INFO] The user 711983855's state has been set to Survey.weight.
+2025-01-29 20:31:52 [INFO] Update id=273477921 is handled. Duration 342 ms by bot id=8108339380
+2025-01-29 20:31:58 [INFO] The user 711983855's state has been set to Survey.height.
+2025-01-29 20:31:59 [INFO] Update id=273477922 is handled. Duration 338 ms by bot id=8108339380
+2025-01-29 20:32:05 [INFO] The user 711983855's state has been set to Survey.feet.
+2025-01-29 20:32:05 [INFO] Update id=273477923 is handled. Duration 409 ms by bot id=8108339380
+2025-01-29 20:32:08 [INFO] The user 711983855's state has been set to Survey.gender.
+2025-01-29 20:32:08 [INFO] Update id=273477924 is handled. Duration 339 ms by bot id=8108339380
+2025-01-29 20:32:12 [INFO] The user 711983855's state has been set to Survey.smoking.
+2025-01-29 20:32:13 [INFO] Update id=273477925 is handled. Duration 895 ms by bot id=8108339380
+2025-01-29 20:32:14 [INFO] The user 711983855's state has been set to Survey.sex.
+2025-01-29 20:32:14 [INFO] Update id=273477926 is handled. Duration 337 ms by bot id=8108339380
+2025-01-29 20:32:15 [INFO] Update id=273477927 is not handled. Duration 2 ms by bot id=8108339380
+2025-01-29 20:32:15 [ERROR] Cause exception while process update id=273477927 by bot id=8108339380
+NameError: name 'db' is not defined
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/bot/middleware.py", line 12, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/app/bot/handlers.py", line 161, in set_sex
+    recommendations = db.get_recommendation(data)
+                      ^^
+NameError: name 'db' is not defined

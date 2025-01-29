@@ -8,16 +8,10 @@ from contextlib import suppress
 
 from logs.logging_config import logger
 from bot.states import Survey
-from bot.scripts.algoritm import Database
 import bot.keyboards as kb
 import bot.pagination as pg
 
-db = Database(min_conn=1, max_conn=25,
-               dbname=os.getenv("POSTGRES_DB"),
-               user=os.getenv("POSTGRES_USER"),
-               password=os.getenv("POSTGRES_PASSWORD"),
-               host=os.getenv("POSTGRES_HOST"),
-               port=os.getenv("POSTGRES_PORT"))
+
 router = Router()
 
 

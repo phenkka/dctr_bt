@@ -6,7 +6,6 @@ services:
     build:
       context: ./app/
     container_name: bot
-    command: ['sh', 'start-work.sh']
     volumes:
       - ./app/:/app
     ports:
