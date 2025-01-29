@@ -1,3 +1,5 @@
-python /bot/scripts/fill_db.py
+# Run database initialization
+python /app/bot/scripts/fill_db.py
 
-python main.py
+# Start the main application
+python /app/main.py

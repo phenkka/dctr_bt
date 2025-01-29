@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2025-01-28 16:24:52 [INFO] Bot is started. Polling begins.
 2025-01-28 16:24:52 [INFO] Start polling
 2025-01-28 16:24:52 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
@@ -83,3 +84,302 @@
 2025-01-28 11:45:25 [WARNING] Sleep for 1.121459 seconds and try again... (tryings = 1, bot id = 8108339380)
 2025-01-28 11:45:31 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
 2025-01-28 11:45:31 [WARNING] Sleep for 1.472470 seconds and try again... (tryings = 2, bot id = 8108339380)
+2025-01-28 12:18:28 [INFO] Bot is started. Polling begins.
+2025-01-28 12:18:28 [INFO] Start polling
+2025-01-28 12:18:29 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 12:18:34 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:18:34 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 12:18:40 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:18:40 [WARNING] Sleep for 1.310261 seconds and try again... (tryings = 1, bot id = 8108339380)
+2025-01-28 12:18:46 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:18:46 [WARNING] Sleep for 1.816602 seconds and try again... (tryings = 2, bot id = 8108339380)
+2025-01-28 12:18:52 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:18:52 [WARNING] Sleep for 2.495054 seconds and try again... (tryings = 3, bot id = 8108339380)
+2025-01-28 12:18:59 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:18:59 [WARNING] Sleep for 3.221564 seconds and try again... (tryings = 4, bot id = 8108339380)
+2025-01-28 12:19:07 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:19:07 [WARNING] Sleep for 4.025329 seconds and try again... (tryings = 5, bot id = 8108339380)
+2025-01-28 12:19:15 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:19:15 [WARNING] Sleep for 4.977467 seconds and try again... (tryings = 6, bot id = 8108339380)
+2025-01-28 12:19:21 [INFO] Connection established (tryings = 7, bot id = 8108339380)
+2025-01-28 12:19:21 [INFO] Update id=273477886 is not handled. Duration 2 ms by bot id=8108339380
+2025-01-28 12:19:22 [INFO] Update id=273477887 is not handled. Duration 1 ms by bot id=8108339380
+2025-01-28 12:19:25 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:19:25 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 12:19:27 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 12:19:27 [INFO] The user 711983855's state has been clean.
+2025-01-28 12:19:27 [INFO] Update id=273477890 is not handled. Duration 1 ms by bot id=8108339380
+2025-01-28 12:19:27 [ERROR] Cause exception while process update id=273477890 by bot id=8108339380
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/app/bot/handlers.py", line 157, in pagination_query
+    await query.message.edit_text(f"{recommendations[page][0]}"
+                                     ~~~~~~~~~~~~~~~^^^^^^
+IndexError: list index out of range
+2025-01-28 12:19:30 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:19:30 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 12:19:36 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:19:36 [WARNING] Sleep for 1.365792 seconds and try again... (tryings = 1, bot id = 8108339380)
+2025-01-28 12:19:42 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:19:42 [WARNING] Sleep for 1.694455 seconds and try again... (tryings = 2, bot id = 8108339380)
+2025-01-28 12:19:48 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:19:48 [WARNING] Sleep for 2.218992 seconds and try again... (tryings = 3, bot id = 8108339380)
+2025-01-28 12:19:56 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:19:56 [WARNING] Sleep for 2.988893 seconds and try again... (tryings = 4, bot id = 8108339380)
+2025-01-28 12:20:05 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:20:05 [WARNING] Sleep for 4.045941 seconds and try again... (tryings = 5, bot id = 8108339380)
+2025-01-28 12:20:12 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:20:12 [WARNING] Sleep for 4.923046 seconds and try again... (tryings = 6, bot id = 8108339380)
+2025-01-28 12:20:29 [INFO] Bot is started. Polling begins.
+2025-01-28 12:20:29 [INFO] Start polling
+2025-01-28 12:20:30 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 12:20:34 [INFO] The user 711983855 called the command /start.
+2025-01-28 12:20:36 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:20:36 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 12:20:36 [INFO] Update id=273477894 is handled. Duration 1398 ms by bot id=8108339380
+2025-01-28 12:20:38 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 12:20:38 [INFO] The user 711983855's state has been set to Survey.age.
+2025-01-28 12:20:38 [INFO] Update id=273477895 is handled. Duration 350 ms by bot id=8108339380
+2025-01-28 12:20:41 [INFO] The user 711983855's state has been set to Survey.weight.
+2025-01-28 12:20:41 [INFO] Update id=273477896 is handled. Duration 346 ms by bot id=8108339380
+2025-01-28 12:20:42 [INFO] The user 711983855's state has been set to Survey.height.
+2025-01-28 12:20:42 [INFO] Update id=273477897 is handled. Duration 347 ms by bot id=8108339380
+2025-01-28 12:20:43 [INFO] The user 711983855's state has been set to Survey.feet.
+2025-01-28 12:20:43 [INFO] Update id=273477898 is handled. Duration 356 ms by bot id=8108339380
+2025-01-28 12:20:43 [INFO] Update id=273477899 is not handled. Duration 19 ms by bot id=8108339380
+2025-01-28 12:20:43 [ERROR] Cause exception while process update id=273477899 by bot id=8108339380
+ValueError: invalid literal for int() with base 10: '90-'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/app/bot/handlers.py", line 91, in set_gender
+    if 15 < int(user_message) < 80:
+            ^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '90-'
+2025-01-28 12:20:45 [INFO] Update id=273477900 is handled. Duration 364 ms by bot id=8108339380
+2025-01-28 12:20:49 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:20:49 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 12:20:55 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:20:55 [WARNING] Sleep for 1.231951 seconds and try again... (tryings = 1, bot id = 8108339380)
+2025-01-28 12:21:00 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:21:00 [WARNING] Sleep for 1.724004 seconds and try again... (tryings = 2, bot id = 8108339380)
+2025-01-28 12:21:07 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:21:07 [WARNING] Sleep for 2.284215 seconds and try again... (tryings = 3, bot id = 8108339380)
+2025-01-28 12:21:13 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:21:13 [WARNING] Sleep for 3.091703 seconds and try again... (tryings = 4, bot id = 8108339380)
+2025-01-28 12:21:17 [INFO] Connection established (tryings = 5, bot id = 8108339380)
+2025-01-28 12:21:17 [INFO] The user 711983855's state has been set to Survey.age.
+2025-01-28 12:21:18 [INFO] Update id=273477907 is handled. Duration 364 ms by bot id=8108339380
+2025-01-28 12:21:21 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:21:21 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 12:21:26 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:21:26 [WARNING] Sleep for 1.230625 seconds and try again... (tryings = 1, bot id = 8108339380)
+2025-01-28 12:21:28 [INFO] Connection established (tryings = 2, bot id = 8108339380)
+2025-01-28 12:21:28 [INFO] The user 711983855's state has been set to Survey.weight.
+2025-01-28 12:21:29 [INFO] Update id=273477910 is handled. Duration 335 ms by bot id=8108339380
+2025-01-28 12:21:32 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:21:32 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 12:21:34 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 12:21:34 [INFO] The user 711983855's state has been set to Survey.height.
+2025-01-28 12:21:34 [INFO] Update id=273477911 is handled. Duration 340 ms by bot id=8108339380
+2025-01-28 12:21:37 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:21:37 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 12:21:43 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:21:43 [WARNING] Sleep for 1.224361 seconds and try again... (tryings = 1, bot id = 8108339380)
+2025-01-28 12:21:50 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 12:21:50 [WARNING] Sleep for 1.804898 seconds and try again... (tryings = 2, bot id = 8108339380)
+2025-01-28 12:22:02 [INFO] Connection established (tryings = 3, bot id = 8108339380)
+2025-01-28 12:22:08 [INFO] The user 711983855's state has been set to Survey.feet.
+2025-01-28 12:22:09 [INFO] Update id=273477912 is handled. Duration 357 ms by bot id=8108339380
+2025-01-28 12:22:12 [INFO] The user 711983855's state has been set to Survey.gender.
+2025-01-28 12:22:12 [INFO] Update id=273477913 is handled. Duration 358 ms by bot id=8108339380
+2025-01-28 12:22:14 [INFO] The user 711983855's state has been set to Survey.smoking.
+2025-01-28 12:22:15 [INFO] Update id=273477914 is handled. Duration 346 ms by bot id=8108339380
+2025-01-28 12:22:16 [INFO] The user 711983855's state has been set to Survey.sex.
+2025-01-28 12:22:16 [INFO] Update id=273477915 is handled. Duration 364 ms by bot id=8108339380
+2025-01-28 12:22:17 [WARNING] An error occurred: relation "specific_recommendations" does not exist
+LINE 3:             FROM specific_recommendations
+                         ^
+
+2025-01-28 12:22:17 [INFO] Update id=273477916 is not handled. Duration 275 ms by bot id=8108339380
+2025-01-28 12:22:17 [ERROR] Cause exception while process update id=273477916 by bot id=8108339380
+TypeError: AbstractConnectionPool._putconn() missing 1 required positional argument: 'conn'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/app/bot/handlers.py", line 167, in set_sex
+    recommendations = db.get_recommendation(data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/bot/scripts/algoritm.py", line 66, in get_recommendation
+    results = self.execute_read_many_query(query, params)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/bot/scripts/algoritm.py", line 37, in execute_read_many_query
+    self.release_connection(conn)
+  File "/app/bot/scripts/algoritm.py", line 21, in release_connection
+    self.connection_pool.putconn()
+TypeError: AbstractConnectionPool._putconn() missing 1 required positional argument: 'conn'
+2025-01-28 12:49:00 [INFO] Bot is started. Polling begins.
+2025-01-28 12:49:00 [INFO] Start polling
+2025-01-28 12:49:02 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 12:49:37 [INFO] The user 711983855 called the command /start.
+2025-01-28 12:49:38 [INFO] Update id=273477917 is handled. Duration 1298 ms by bot id=8108339380
+2025-01-28 12:49:40 [INFO] The user 711983855's state has been set to Survey.age.
+2025-01-28 12:49:40 [INFO] Update id=273477918 is handled. Duration 415 ms by bot id=8108339380
+2025-01-28 12:50:11 [INFO] Bot is started. Polling begins.
+2025-01-28 12:50:11 [INFO] Start polling
+2025-01-28 12:50:12 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 12:52:31 [INFO] Bot is started. Polling begins.
+2025-01-28 12:52:31 [INFO] Start polling
+2025-01-28 12:52:32 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 13:12:48 [INFO] Bot is started. Polling begins.
+2025-01-28 13:12:48 [INFO] Start polling
+2025-01-28 13:12:49 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 13:25:05 [INFO] Bot is started. Polling begins.
+2025-01-28 13:25:05 [INFO] Start polling
+2025-01-28 13:25:07 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 13:25:45 [INFO] Bot is started. Polling begins.
+2025-01-28 13:25:45 [INFO] Start polling
+2025-01-28 13:25:46 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 13:26:27 [INFO] Bot is started. Polling begins.
+2025-01-28 13:26:27 [INFO] Start polling
+2025-01-28 13:26:29 [INFO] Run polling for bot @phenkka_test_bot id=8108339380 - 'Test'

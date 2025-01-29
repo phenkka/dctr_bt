@@ -3,24 +3,24 @@ from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, CallbackQuery
 from aiogram.exceptions import TelegramBadRequest
-
+import os
 from contextlib import suppress
 
 from logs.logging_config import logger
 from bot.states import Survey
+from bot.scripts.algoritm import Database
 import bot.keyboards as kb
 import bot.pagination as pg
 
+db = Database(min_conn=1, max_conn=25,
+               dbname=os.getenv("POSTGRES_DB"),
+               user=os.getenv("POSTGRES_USER"),
+               password=os.getenv("POSTGRES_PASSWORD"),
+               host=os.getenv("POSTGRES_HOST"),
+               port=os.getenv("POSTGRES_PORT"))
 router = Router()
 
-fake_data = [
-    ["Привет", "Я тут"],
-    ["Я здесь", "Я тут"],
-    ["Возраст", "Я тут"],
-    ["Тут", "Я тут"]
-]
 
-data = []
 
 @router.message(Command("start"))
 async def cmd_start(message: Message, state: FSMContext):
@@ -135,7 +135,13 @@ async def set_smoking(query: CallbackQuery, state: FSMContext):
 
 
 @router.callback_query(pg.Pagination.filter(F.action.in_(["prev", "next"])))
-async def pagination_query(query: CallbackQuery, callback_data: pg.Pagination):
+async def pagination_query(query: CallbackQuery, callback_data: pg.Pagination, state: FSMContext):
+    data = await state.get_data()
+    recommendations = data.get("recommendations", [])
+
+    await state.clear()
+    logger.info(f"The user {query.from_user.id}'s state has been clean.")
+
     page_num = int(callback_data.page)
     page = page_num - 1 if page_num > 0 else 0
 
@@ -143,9 +149,11 @@ async def pagination_query(query: CallbackQuery, callback_data: pg.Pagination):
         page = page_num + 1 if page_num < (len(fake_data) - 1) else page_num
 
     with suppress(TelegramBadRequest):
-        await query.message.edit_text(f"{fake_data[page][0]}\n<b>{fake_data[page][1]}</b>",
-                                   reply_markup=pg.paginator(page=page, total_pages=4),
-                                   parse_mode='HTML'
+        await query.message.edit_text(f"{recommendations[page][0]}"
+                               f"\n<b>{recommendations[page][1]}</b>"
+                               f"\n{recommendations[page][2]}"
+                               f"\n{recommendations[page][3]}"
+                               f"\n{recommendations[page][4]}", reply_markup=pg.paginator(page=page, total_pages=4), parse_mode='HTML'
         )
     await query.answer()
 
@@ -155,8 +163,13 @@ async def set_sex(query: CallbackQuery, state: FSMContext):
     """The survey result"""
     await state.update_data(sex=query.data)
     data = await state.get_data()
-    await state.clear()
-    logger.info(f"The user {query.from_user.id}'s state has been clean.")
+
+    recommendations = db.get_recommendation(data)
+    await state.update_data(recommendations=recommendations)
 
     await query.message.edit_text("Thank you for completing the survey! Your answers:")
-    await query.message.answer(f"{fake_data[0][0]}\n<b>{fake_data[0][1]}</b>", reply_markup=pg.paginator(total_pages=4), parse_mode='HTML')
+    await query.message.answer(f"{recommendations[0][0]}"
+                               f"\n<b>{recommendations[0][1]}</b>"
+                               f"\n{recommendations[0][2]}"
+                               f"\n{recommendations[0][3]}"
+                               f"\n{recommendations[0][4]}", reply_markup=pg.paginator(total_pages=4), parse_mode='HTML')
