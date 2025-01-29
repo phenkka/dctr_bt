@@ -21,12 +21,12 @@ async def main():
 
     # Инициализируем пул подключений к БД
     await db.init_pool()
-    
-    # Подключаем Middleware для передачи пула БД в хендлеры
-    dp.update.middleware(DatabaseMiddleware(db.pool))
-    
+
+    # Подключаем Middleware для передачи базы данных в хендлеры
+    dp.update.middleware(DatabaseMiddleware(db))  # Добавляем middleware напрямую
+
     dp.include_router(router)
-    
+
     try:
         await dp.start_polling(bot)
     finally:

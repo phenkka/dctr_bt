@@ -80,10 +80,12 @@ class Database:
                 logger.warning(f"⚠ Ошибка выполнения запроса: {e}")
                 return []
 
+
     async def get_recommendation(self, data):
         """Получает рекомендации из БД на основе переданных данных"""
+
         query = """
-            SELECT title, grade, text, servFreq, riskText
+            SELECT id, title, grade, text, servFreq, riskText
             FROM specific_recommendations
             WHERE 1=1
         """
@@ -107,4 +109,20 @@ class Database:
             query += " OR (riskName = 'Sexually Active')"
 
         results = await self.execute_read_many(query, params)
+
         return results if results else []
+    
+    async def get_tools_for_recommendation(self, recommendation_id: int):
+        """Получает инструменты для указанной рекомендации по её ID"""
+        query = """
+            SELECT t.tool_id, t.url, t.title, t.text, t.keywords
+            FROM tools t
+            JOIN specific_recommendations_tools srt ON t.tool_id = srt.tool_id
+            WHERE srt.specific_recommendation_id = $1
+        """
+        try:
+            tools = await self.execute_read_many(query, [recommendation_id])
+            return tools
+        except Exception as e:
+            logger.error(f"Ошибка при получении инструментов для рекомендации {recommendation_id}: {e}")
+            return []
