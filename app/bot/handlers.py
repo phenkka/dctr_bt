@@ -1,16 +1,19 @@
-from aiogram import Router, F
+import os
+
+from aiogram import Router, F, Bot
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
-from aiogram.types import Message, CallbackQuery
+from aiogram.types import Message, CallbackQuery, InlineKeyboardButton
 from aiogram.exceptions import TelegramBadRequest
+from aiogram.utils.keyboard import InlineKeyboardBuilder
 from contextlib import suppress
-from aiogram.utils.keyboard import InlineKeyboardBuilder, InlineKeyboardButton
 
 from logs.logging_config import logger
 from bot.states import Survey
 import bot.keyboards as kb
 import bot.pagination as pg
 
+bot = Bot(token=os.getenv('BOT_API'))
 router = Router()
 
 
@@ -24,6 +27,7 @@ async def cmd_start(message: Message, state: FSMContext, db):
 
     logger.info(f"The user {message.from_user.id} called the command /start.")
     await message.answer("Here is detailed information about the bot", reply_markup=kb.greeting)
+
 
 
 @router.callback_query(F.data == "survey")
@@ -137,8 +141,11 @@ async def set_smoking(query: CallbackQuery, state: FSMContext):
     await query.message.edit_text("Are you sexually active?", reply_markup=kb.yon)
 
 
-@router.callback_query(pg.Pagination.filter(F.action.in_(["prev", "next"])))
-async def pagination_query(query: CallbackQuery, callback_data: pg.Pagination, state: FSMContext):
+@router.callback_query(pg.Pagination.filter(F.action.in_(["prev", "next", "back", "noop"])))
+async def pagination_page(query: CallbackQuery, callback_data: pg.Pagination, state: FSMContext):
+    if callback_data.action == "noop":
+        return
+
     data = await state.get_data()
     recommendations = data.get("recommendations", [])
 
@@ -149,51 +156,80 @@ async def pagination_query(query: CallbackQuery, callback_data: pg.Pagination, s
     page_num = int(callback_data.page)
     total_pages = len(recommendations)
 
-    if callback_data.action == "next":
-        page = min(page_num + 1, total_pages - 1)
-    else:
-        page = max(page_num - 1, 0)
+    page = page_num - 1 if page_num > 0 else 0
 
-    rec = recommendations[page]
+    if callback_data.action == "back":
+        page = page_num if page_num > 0 else 0
+
+    elif callback_data.action == "next":
+        page = page_num + 1 if page_num < (len(recommendations) - 1) else page_num
 
     with suppress(TelegramBadRequest):
         await query.message.edit_text(
-            f"{rec.get('title', 'No title')} "
-            f"<b>{rec.get('grade', 'No grade')}</b> "
-            f"{rec.get('text', 'No description')} "
-            f"{rec.get('servfreq', '')} "
-            f"{rec.get('risktext', '')}",
+            f"{recommendations[page].get('title', 'No title'.strip())}"
+            f"\nGrade: <b>{recommendations[page].get('grade', 'None')}</b>",
             reply_markup=pg.paginator(page=page, total_pages=total_pages),
             parse_mode='HTML'
         )
     
     await query.answer()
 
+@router.callback_query(pg.Pagination.filter(F.action.in_("risk")))
+async def pagination_risk(query: CallbackQuery, callback_data: pg.Pagination, state: FSMContext):
+    data = await state.get_data()
+    recommendations = data.get("recommendations", [])
+
+    if not recommendations or not isinstance(recommendations, list):
+        await query.answer("No recommendations found.")
+        return
+
+    page = callback_data.page
+
+    back_button = InlineKeyboardBuilder()
+    back_button.add(
+        InlineKeyboardButton(text="⬅ Back", callback_data=pg.Pagination(action="back", page=page).pack())
+    )
+
+    with suppress(TelegramBadRequest):
+        await query.message.edit_text(
+            f"⚠️ <b>Risks:</b>"
+            f"\n{recommendations[page].get('grade', 'None')}",
+            reply_markup=back_button.as_markup(),
+            parse_mode='HTML'
+        )
+
+    await query.answer()
+
 @router.callback_query(Survey.sex)
 async def set_sex(query: CallbackQuery, state: FSMContext):
+    if query.data == "noop":
+        return
+
     await state.update_data(sex=query.data)
+
     data_from_state = await state.get_data()
-    logger.info(f"State data: {data_from_state}")
-    
     db = data_from_state.get("db")
+
+    logger.info(f"State data: {data_from_state}")
 
     try:
         recommendations = await db.get_recommendation(data_from_state)
+        count_screenings = len(recommendations)
+
+        logger.info(f"The length of recommendation is {count_screenings}")
 
         if not recommendations or not isinstance(recommendations, list):
             logger.error(f"Invalid recommendations format: {recommendations}")
-            await query.message.answer("No recommendations found.")
+            await query.message.answer("No recommendations found.//")
             return
 
         await state.update_data(recommendations=recommendations)
 
-        await query.message.edit_text("Thank you for completing the survey! Your answers:")
+        await query.message.edit_text("Thank you for completing the survey!"
+                                      f"\nYou should undergo {count_screenings} medical screenings.")
         await query.message.answer(
-            f"{recommendations[0].get('title', 'No title')}\n"
-            f"<b>{recommendations[0].get('grade', 'No grade')}</b>\n"
-            f"{recommendations[0].get('text', 'No description')}\n"
-            f"{recommendations[0].get('servfreq', '')}\n"
-            f"{recommendations[0].get('risktext', '')}",
+            f"{recommendations[0].get('title', 'No title').strip()}"
+            f"\nGrade: <b>{recommendations[0].get('grade', 'None')}</b>",
             reply_markup=pg.paginator(total_pages=len(recommendations)),
             parse_mode='HTML'
         )
@@ -203,42 +239,42 @@ async def set_sex(query: CallbackQuery, state: FSMContext):
         await query.message.answer("An error occurred while processing your request. Please try again later.")
 
 
-@router.callback_query(F.data.startswith("Tools_"))
-async def show_tools(query: CallbackQuery, state: FSMContext):
-    """Обработка нажатия на кнопку Tools"""
-    try:
-        page = int(query.data.split("_")[1])
-        await state.update_data(current_page=page)
-        logger.info(f"Выбрана страница Tools: {page}")
-
-        await query.message.edit_text(
-            "Вот инструменты, которые вы запросили. Выберите действие:", 
-            reply_markup=InlineKeyboardBuilder()
-                .add(InlineKeyboardButton("Назад", callback_data="back"))
-                .as_markup()
-        )
-    except Exception as e:
-        logger.error(f"Ошибка при обработке кнопки Tools: {e}")
-        await query.message.answer("Произошла ошибка при обработке запроса.")
-
-
-@router.callback_query(F.data == "back")
-async def go_back(query: CallbackQuery, state: FSMContext):
-    """Handle the Back button click to return to the recommendations list"""
-    data_from_state = await state.get_data()
-    page = data_from_state.get('current_page', 0)
-
-    # Return back to the recommendations list with pagination
-    recommendations = data_from_state.get("recommendations", [])
-    total_pages = len(recommendations)
-    
-    await query.message.edit_text(
-        f"Thank you for completing the survey! Your answers:\n"
-        f"{recommendations[page].get('title', 'No title')}\n"
-        f"<b>{recommendations[page].get('grade', 'No grade')}</b>\n"
-        f"{recommendations[page].get('text', 'No description')}\n"
-        f"{recommendations[page].get('servfreq', '')}\n"
-        f"{recommendations[page].get('risktext', '')}",
-        reply_markup=pg.paginator(total_pages=total_pages, page=page),
-        parse_mode='HTML'
-    )
+# @router.callback_query(F.data.startswith("Tools_"))
+# async def show_tools(query: CallbackQuery, state: FSMContext):
+#     """Обработка нажатия на кнопку Tools"""
+#     try:
+#         page = int(query.data.split("_")[1])
+#         await state.update_data(current_page=page)
+#         logger.info(f"Выбрана страница Tools: {page}")
+#
+#         await query.message.edit_text(
+#             "Вот инструменты, которые вы запросили. Выберите действие:",
+#             reply_markup=InlineKeyboardBuilder()
+#                 .add(InlineKeyboardButton("Назад", callback_data="back"))
+#                 .as_markup()
+#         )
+#     except Exception as e:
+#         logger.error(f"Ошибка при обработке кнопки Tools: {e}")
+#         await query.message.answer("Произошла ошибка при обработке запроса.")
+#
+#
+# @router.callback_query(F.data == "back")
+# async def go_back(query: CallbackQuery, state: FSMContext):
+#     """Handle the Back button click to return to the recommendations list"""
+#     data_from_state = await state.get_data()
+#     page = data_from_state.get('current_page', 0)
+#
+#     # Return back to the recommendations list with pagination
+#     recommendations = data_from_state.get("recommendations", [])
+#     total_pages = len(recommendations)
+#
+#     await query.message.edit_text(
+#         f"Thank you for completing the survey! Your answers:\n"
+#         f"{recommendations[page].get('title', 'No title')}\n"
+#         f"<b>{recommendations[page].get('grade', 'No grade')}</b>\n"
+#         f"{recommendations[page].get('text', 'No description')}\n"
+#         f"{recommendations[page].get('servfreq', '')}\n"
+#         f"{recommendations[page].get('risktext', '')}",
+#         reply_markup=pg.paginator(total_pages=total_pages, page=page),
+#         parse_mode='HTML'
+#     )

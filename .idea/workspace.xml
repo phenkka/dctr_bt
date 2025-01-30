@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="077f167d-30c7-4cf9-a072-d6fe90827b6d" name="Changes" comment="adding __pycache__" />
+    <list default="true" id="077f167d-30c7-4cf9-a072-d6fe90827b6d" name="Changes" comment="adding __pycache__">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bot/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/bot/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bot/pagination.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/bot/pagination.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/logs/bot.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/logs/bot.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +49,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/User/PycharmProjects/dctr_bt"
   }
 }]]></component>
