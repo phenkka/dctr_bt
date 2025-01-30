@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="077f167d-30c7-4cf9-a072-d6fe90827b6d" name="Changes" comment="adding __pycache__" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;phenkka&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/phenkka/dctr_bt.git&quot;,
+    &quot;accountId&quot;: &quot;6fe6e77d-a1bc-4544-9923-e4eeb454299d&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2s9lz7RjkKvOIY0AK9wGf2L9Zqz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/User/PycharmProjects/dctr_bt"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\dctr_bt\app\bot" />
+      <recent name="C:\Users\User\PycharmProjects\dctr_bt\app" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0e3be3396995-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23339.19" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="077f167d-30c7-4cf9-a072-d6fe90827b6d" name="Changes" comment="" />
+      <created>1737875930568</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737875930568</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first of all">
+      <option name="closed" value="true" />
+      <created>1737876140490</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737876140490</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add router and first command">
+      <option name="closed" value="true" />
+      <created>1737876977295</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737876977295</updated>
+    </task>
+    <task id="LOCAL-00003" summary="adding a logger and writing logs to a separate file &quot;bot.log&quot;">
+      <option name="closed" value="true" />
+      <created>1737878433839</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1737878433839</updated>
+    </task>
+    <task id="LOCAL-00004" summary="adding keyboard for command /start">
+      <option name="closed" value="true" />
+      <created>1737892743609</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1737892743609</updated>
+    </task>
+    <task id="LOCAL-00005" summary="create bot.log in logs">
+      <option name="closed" value="true" />
+      <created>1737908122134</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737908122134</updated>
+    </task>
+    <task id="LOCAL-00006" summary="adding more keyboards, like 'yes or nor' or 'gender'">
+      <option name="closed" value="true" />
+      <created>1737908178853</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1737908178853</updated>
+    </task>
+    <task id="LOCAL-00007" summary="more better logging">
+      <option name="closed" value="true" />
+      <created>1737908210344</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1737908210344</updated>
+    </task>
+    <task id="LOCAL-00008" summary="adding survey">
+      <option name="closed" value="true" />
+      <created>1737908243844</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1737908243844</updated>
+    </task>
+    <task id="LOCAL-00009" summary="chat has become cleaner">
+      <option name="closed" value="true" />
+      <created>1737913017990</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1737913017991</updated>
+    </task>
+    <task id="LOCAL-00010" summary="list of libs">
+      <option name="closed" value="true" />
+      <created>1737913389668</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1737913389668</updated>
+    </task>
+    <task id="LOCAL-00011" summary="adding data validity check">
+      <option name="closed" value="true" />
+      <created>1737920585665</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1737920585665</updated>
+    </task>
+    <task id="LOCAL-00012" summary="more better data validity check">
+      <option name="closed" value="true" />
+      <created>1737921522873</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1737921522873</updated>
+    </task>
+    <task id="LOCAL-00013" summary="dctr_bt v1.0">
+      <option name="closed" value="true" />
+      <created>1737988802918</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1737988802918</updated>
+    </task>
+    <task id="LOCAL-00014" summary="dctr_bt v1.0">
+      <option name="closed" value="true" />
+      <created>1737988948629</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1737988948629</updated>
+    </task>
+    <task id="LOCAL-00015" summary="better imports">
+      <option name="closed" value="true" />
+      <created>1738051285982</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1738051285982</updated>
+    </task>
+    <task id="LOCAL-00016" summary="better bot launch">
+      <option name="closed" value="true" />
+      <created>1738054254270</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1738054254270</updated>
+    </task>
+    <task id="LOCAL-00017" summary="adding criterias">
+      <option name="closed" value="true" />
+      <created>1738056542014</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1738056542014</updated>
+    </task>
+    <task id="LOCAL-00018" summary="dctr_bt v1.1">
+      <option name="closed" value="true" />
+      <created>1738062544054</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1738062544054</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix over">
+      <option name="closed" value="true" />
+      <created>1738064614200</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1738064614200</updated>
+    </task>
+    <task id="LOCAL-00020" summary="experemental function">
+      <option name="closed" value="true" />
+      <created>1738066169744</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1738066169744</updated>
+    </task>
+    <task id="LOCAL-00021" summary="logs">
+      <option name="closed" value="true" />
+      <created>1738223833772</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1738223833772</updated>
+    </task>
+    <task id="LOCAL-00022" summary="adding __pycache__">
+      <option name="closed" value="true" />
+      <created>1738225240034</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1738225240034</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first of all" />
+    <MESSAGE value="add router and first command" />
+    <MESSAGE value="adding a logger and writing logs to a separate file &quot;bot.log&quot;" />
+    <MESSAGE value="adding keyboard for command /start" />
+    <MESSAGE value="create bot.log in logs" />
+    <MESSAGE value="adding more keyboards, like 'yes or nor' or 'gender'" />
+    <MESSAGE value="more better logging" />
+    <MESSAGE value="adding survey" />
+    <MESSAGE value="chat has become cleaner" />
+    <MESSAGE value="list of libs" />
+    <MESSAGE value="adding data validity check" />
+    <MESSAGE value="more better data validity check" />
+    <MESSAGE value="dctr_bt v1.0" />
+    <MESSAGE value="better imports" />
+    <MESSAGE value="better bot launch" />
+    <MESSAGE value="adding criterias" />
+    <MESSAGE value="dctr_bt v1.1" />
+    <MESSAGE value="fix over" />
+    <MESSAGE value="experemental function" />
+    <MESSAGE value="logs" />
+    <MESSAGE value="adding __pycache__" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding __pycache__" />
+  </component>
+</project>
