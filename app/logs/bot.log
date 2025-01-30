@@ -121,3 +121,171 @@
 2025-01-28 16:50:21 [INFO] Update id=273477875 is handled. Duration 344 ms by bot id=8108339380
 2025-01-28 16:50:25 [INFO] Update id=273477876 is handled. Duration 171 ms by bot id=8108339380
 2025-01-28 16:50:28 [INFO] Update id=273477877 is handled. Duration 234 ms by bot id=8108339380
+2025-01-28 17:18:29 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:18:29 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:18:34 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:18:34 [WARNING] Sleep for 1.278774 seconds and try again... (tryings = 1, bot id = 8108339380)
+2025-01-28 17:18:40 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:18:40 [WARNING] Sleep for 1.600400 seconds and try again... (tryings = 2, bot id = 8108339380)
+2025-01-28 17:18:46 [INFO] Connection established (tryings = 3, bot id = 8108339380)
+2025-01-28 17:18:46 [INFO] The user 711983855 called the command /start.
+2025-01-28 17:18:46 [INFO] Update id=273477878 is handled. Duration 250 ms by bot id=8108339380
+2025-01-28 17:18:47 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:18:47 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:18:49 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 17:18:49 [INFO] The user 711983855's state has been set to Survey.age.
+2025-01-28 17:18:49 [INFO] Update id=273477879 is handled. Duration 125 ms by bot id=8108339380
+2025-01-28 17:18:54 [INFO] The user 711983855's state has been set to Survey.weight.
+2025-01-28 17:18:54 [INFO] Update id=273477880 is handled. Duration 155 ms by bot id=8108339380
+2025-01-28 17:18:54 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:18:54 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:18:57 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 17:18:57 [INFO] Update id=273477881 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 17:18:57 [ERROR] Cause exception while process update id=273477881 by bot id=8108339380
+ValueError: invalid literal for int() with base 10: '10-'
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\dctr_bt\app\bot\handlers.py", line 62, in set_height
+    if 1 < int(user_message) < 700:
+           ^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '10-'
+2025-01-28 17:19:02 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:19:02 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:19:03 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 17:19:03 [INFO] The user 711983855's state has been set to Survey.height.
+2025-01-28 17:19:03 [INFO] Update id=273477882 is handled. Duration 93 ms by bot id=8108339380
+2025-01-28 17:19:10 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:19:10 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:19:13 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 17:19:13 [INFO] The user 711983855's state has been set to Survey.feet.
+2025-01-28 17:19:13 [INFO] Update id=273477883 is handled. Duration 92 ms by bot id=8108339380
+2025-01-28 17:19:16 [INFO] The user 711983855's state has been set to Survey.gender.
+2025-01-28 17:19:16 [INFO] Update id=273477884 is handled. Duration 110 ms by bot id=8108339380
+2025-01-28 17:19:18 [INFO] The user 711983855's state has been set to Survey.pregnant.
+2025-01-28 17:19:19 [INFO] Update id=273477885 is handled. Duration 110 ms by bot id=8108339380
+2025-01-28 17:19:20 [INFO] The user 711983855's state has been set to Survey.smoking.
+2025-01-28 17:19:20 [INFO] Update id=273477886 is handled. Duration 109 ms by bot id=8108339380
+2025-01-28 17:19:20 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:19:20 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:19:21 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 17:19:21 [INFO] The user 711983855's state has been set to Survey.sex.
+2025-01-28 17:19:21 [INFO] Update id=273477887 is handled. Duration 93 ms by bot id=8108339380
+2025-01-28 17:19:22 [INFO] The user 711983855's state has been clean.
+2025-01-28 17:19:23 [INFO] Update id=273477888 is handled. Duration 217 ms by bot id=8108339380
+2025-01-28 17:19:25 [INFO] Update id=273477889 is handled. Duration 202 ms by bot id=8108339380
+2025-01-28 17:19:26 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:19:26 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:19:31 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:19:31 [WARNING] Sleep for 1.313687 seconds and try again... (tryings = 1, bot id = 8108339380)
+2025-01-28 17:19:33 [INFO] Connection established (tryings = 2, bot id = 8108339380)
+2025-01-28 17:19:34 [INFO] Update id=273477891 is handled. Duration 218 ms by bot id=8108339380
+2025-01-28 17:19:35 [INFO] Update id=273477892 is handled. Duration 234 ms by bot id=8108339380
+2025-01-28 17:19:36 [INFO] Update id=273477893 is handled. Duration 202 ms by bot id=8108339380
+2025-01-28 17:19:37 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:19:37 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:19:43 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:19:43 [WARNING] Sleep for 1.286483 seconds and try again... (tryings = 1, bot id = 8108339380)
+2025-01-28 17:19:50 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:19:50 [WARNING] Sleep for 1.757247 seconds and try again... (tryings = 2, bot id = 8108339380)
+2025-01-28 17:19:58 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:19:58 [WARNING] Sleep for 2.496770 seconds and try again... (tryings = 3, bot id = 8108339380)
+2025-01-28 17:20:08 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:20:08 [WARNING] Sleep for 3.359595 seconds and try again... (tryings = 4, bot id = 8108339380)
+2025-01-28 17:20:17 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:20:17 [WARNING] Sleep for 4.239382 seconds and try again... (tryings = 5, bot id = 8108339380)
+2025-01-28 17:20:30 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:20:30 [WARNING] Sleep for 5.099828 seconds and try again... (tryings = 6, bot id = 8108339380)
+2025-01-28 17:20:39 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:20:39 [WARNING] Sleep for 4.859823 seconds and try again... (tryings = 7, bot id = 8108339380)
+2025-01-28 17:20:44 [INFO] Connection established (tryings = 8, bot id = 8108339380)
+2025-01-28 17:20:44 [INFO] Update id=273477900 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 17:20:45 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:20:45 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:20:46 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 17:20:46 [INFO] Update id=273477901 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 17:20:50 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:20:50 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:20:52 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 17:20:52 [INFO] Update id=273477902 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 17:20:56 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:20:56 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:20:59 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 17:20:59 [INFO] Update id=273477903 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 17:21:02 [INFO] Update id=273477904 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 17:21:02 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:21:02 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:21:03 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 17:21:03 [INFO] Update id=273477905 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 17:21:09 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:21:09 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:21:15 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 17:21:15 [INFO] The user 711983855 called the command /start.
+2025-01-28 17:21:15 [INFO] Update id=273477906 is handled. Duration 266 ms by bot id=8108339380
+2025-01-28 17:21:16 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:21:16 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:21:19 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 17:21:19 [INFO] Update id=273477908 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 17:21:21 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:21:21 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:21:26 [INFO] Connection established (tryings = 1, bot id = 8108339380)
+2025-01-28 17:21:26 [INFO] Update id=273477909 is not handled. Duration 0 ms by bot id=8108339380
+2025-01-28 17:21:27 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:21:27 [WARNING] Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8108339380)
+2025-01-28 17:21:32 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:21:32 [WARNING] Sleep for 1.135095 seconds and try again... (tryings = 1, bot id = 8108339380)
+2025-01-28 17:21:38 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:21:38 [WARNING] Sleep for 1.379683 seconds and try again... (tryings = 2, bot id = 8108339380)
+2025-01-28 17:21:44 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:21:44 [WARNING] Sleep for 1.903509 seconds and try again... (tryings = 3, bot id = 8108339380)
+2025-01-28 17:21:51 [ERROR] Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-01-28 17:21:51 [WARNING] Sleep for 2.520151 seconds and try again... (tryings = 4, bot id = 8108339380)
+2025-01-28 17:21:52 [INFO] Polling stopped
+2025-01-28 17:21:52 [INFO] Polling stopped for bot @phenkka_test_bot id=8108339380 - 'Test'
+2025-01-28 17:21:52 [WARNING] Bot is stopped manually.
